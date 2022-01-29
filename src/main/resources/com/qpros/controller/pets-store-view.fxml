@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qpros.controller.PetsController">
+   <children>
+      <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text=" Pets Page">
+            <content>
+              <AnchorPane>
+                     <children>
+                        <Pane layoutY="5.0">
+                           <children>
+                              <TextField fx:id="findPetByIdTF" disable="true" layoutX="164.0" visible="false" />
+                              <ComboBox fx:id="findPetByCB" layoutX="24.0" promptText="Find Pet By ..." />
+                              <TableView fx:id="tableView" layoutY="25.0">
+                                <columns>
+                                  <TableColumn fx:id="petIDColumn" prefWidth="62.0" text="Pet ID" />
+                                  <TableColumn fx:id="categoryNameColumn" prefWidth="140.0" text="Category Name" />
+                                    <TableColumn fx:id="petNameColumn" prefWidth="139.0" text="Pet Name" />
+                                    <TableColumn fx:id="petStatusColumn" prefWidth="119.0" text="Pet Status" />
+                                    <TableColumn fx:id="petImageColumn" prefWidth="144.0" text="Pet Image" />
+                                </columns>
+                              </TableView>
+                              <ComboBox fx:id="findPetByStatusCB" disable="true" layoutX="164.0" prefWidth="150.0" visible="false" />
+                              <Button fx:id="findPetBtn" disable="true" layoutX="469.0" mnemonicParsing="false" onAction="#findPetActionButton" text="Find Pet" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Add New Pet">
+            <content>
+              <AnchorPane fx:id="addPetPane">
+                     <children>
+                        <Pane>
+                           <children>
+                              <Label layoutY="49.0" text="Pet Id" />
+                              <TextField fx:id="addCategoryNameTF" layoutX="111.0" layoutY="199.0" />
+                              <Label layoutY="101.0" text="Pet Name" />
+                              <Label layoutY="203.0" text="Category Name" />
+                              <TextField fx:id="addPetNameTF" layoutX="108.0" layoutY="97.0" />
+                              <Button fx:id="addPetBtn" layoutX="300.0" layoutY="338.0" mnemonicParsing="false" onAction="#addPetAction" text="Add Pet" />
+                              <Button fx:id="clearAddBtn" layoutX="156.0" layoutY="337.0" mnemonicParsing="false" onAction="#clearAddPetAction" text="Clear" />
+                              <TextField fx:id="addCategoryIdTF" layoutX="111.0" layoutY="145.0" />
+                              <TextField fx:id="addPetIdTF" layoutX="108.0" layoutY="45.0" />
+                              <Label layoutY="149.0" text="Category Id" />
+                              <Label layoutY="249.0" text="Status" />
+                              <TextField fx:id="addStatusTF" layoutX="112.0" layoutY="245.0" />
+                              <Group>
+                                 <children>
+                                    <ListView fx:id="photoLV" layoutX="300.0" layoutY="53.0" prefHeight="93.0" prefWidth="247.0" />
+                                    <Button fx:id="addPhotoUrlsBtn" disable="true" layoutX="300.0" layoutY="2.0" mnemonicParsing="false" onAction="#addPhotoUrlAction" text="Add Photo Urls" />
+                                    <TextField fx:id="addPhotoUrlTF" layoutX="397.0" layoutY="28.0" />
+                                    <Label layoutX="300.0" layoutY="32.0" text="Photo Url" />
+                                    <Button fx:id="deletePhotoUrlsBtn" disable="true" layoutX="430.0" layoutY="2.0" mnemonicParsing="false" onAction="#deletePhotoUrlAction" text="Delete Photo" />
+                                 </children>
+                              </Group>
+                              <Group layoutY="148.0">
+                                 <children>
+                                    <ListView fx:id="tagsLV" layoutX="300.0" layoutY="81.0" prefHeight="74.0" prefWidth="247.0" />
+                                    <Button fx:id="addTagBtn" disable="true" layoutX="300.0" layoutY="2.0" mnemonicParsing="false" onAction="#addTagAction" text="Add Tags" />
+                                    <TextField fx:id="addTagIdTF" layoutX="387.0" layoutY="31.0" />
+                                    <Button fx:id="deleteTagBtn" disable="true" layoutX="424.0" layoutY="2.0" mnemonicParsing="false" onAction="#deleteTagAction" text="Delete Tag" />
+                                    <TextField fx:id="addTagNameTF" layoutX="387.0" layoutY="56.0" />
+                                    <Label layoutX="300.0" layoutY="35.0" text="Tag Id" />
+                                    <Label layoutX="300.0" layoutY="60.0" text="Tag Name" />
+                                 </children>
+                              </Group>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Update/delete Pet">
+               <content>
+                  <AnchorPane fx:id="addPetPane1">
+                     <children>
+                        <Pane>
+                           <children>
+                              <Label layoutY="49.0" text="Pet Id" />
+                              <TextField fx:id="updateCategoryNameTF" layoutX="111.0" layoutY="199.0" />
+                              <Label layoutY="101.0" text="Pet Name" />
+                              <Label layoutY="203.0" text="Category Name" />
+                              <TextField fx:id="updatePetNameTF" layoutX="108.0" layoutY="97.0" />
+                              <Button fx:id="deletePetBtn" disable="true" layoutX="379.0" layoutY="338.0" mnemonicParsing="false" onAction="#deletePetAction" text="Delete Pet" />
+                              <Button fx:id="clearUpdateBtn" layoutX="105.0" layoutY="338.0" mnemonicParsing="false" onAction="#clearUpdatePetAction" text="Clear" />
+                              <TextField fx:id="updateCategoryIdTF" layoutX="111.0" layoutY="145.0" />
+                              <TextField fx:id="updatePetIdTF" layoutX="108.0" layoutY="45.0" />
+                              <Label layoutY="149.0" text="Category Id" />
+                              <Label layoutY="249.0" text="Status" />
+                              <TextField fx:id="updateStatusTF" layoutX="112.0" layoutY="245.0" />
+                              <Group>
+                                 <children>
+                                    <ListView fx:id="updatePhotoLV" layoutX="300.0" layoutY="53.0" prefHeight="93.0" prefWidth="247.0" />
+                                    <Button fx:id="updatePhotoUrlsBtn" disable="true" layoutX="300.0" layoutY="2.0" mnemonicParsing="false" onAction="#updatePhotoUrlAction" text="Add Photo Urls" />
+                                    <TextField fx:id="updatePhotoTF" layoutX="397.0" layoutY="28.0" />
+                                    <Label layoutX="300.0" layoutY="32.0" text="Photo Url" />
+                                    <Button fx:id="deleteUpdatePhotoUrlsBtn" disable="true" layoutX="430.0" layoutY="2.0" mnemonicParsing="false" onAction="#deleteUpdatePhotoUrlAction" text="Delete Photo" />
+                                 </children>
+                              </Group>
+                              <Group layoutY="148.0">
+                                 <children>
+                                    <ListView fx:id="updateTagsLV" layoutX="300.0" layoutY="81.0" prefHeight="74.0" prefWidth="247.0" />
+                                    <Button fx:id="updateAddTagsBtn" disable="true" layoutX="300.0" layoutY="2.0" mnemonicParsing="false" onAction="#updateTagAction" text="Add Tags" />
+                                    <TextField fx:id="updateTagIdTF" layoutX="387.0" layoutY="31.0" />
+                                    <Button fx:id="updateDeleteTagsBtn" disable="true" layoutX="424.0" layoutY="2.0" mnemonicParsing="false" onAction="#deleteUpdateTagAction" text="Delete Tag" />
+                                    <TextField fx:id="updateTagNameTF" layoutX="387.0" layoutY="56.0" />
+                                    <Label layoutX="300.0" layoutY="35.0" text="Tag Id" />
+                                    <Label layoutX="300.0" layoutY="60.0" text="Tag Name" />
+                                 </children>
+                              </Group>
+                              <Button fx:id="updatePetBtn" layoutX="238.0" layoutY="337.0" mnemonicParsing="false" onAction="#updatePetAction" text="Update Pet" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Dashboard">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <PieChart fx:id="statusPC" prefHeight="400.0" prefWidth="500.0" title="Dashboard summary" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
